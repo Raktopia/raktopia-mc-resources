@@ -20,8 +20,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GABRIEL_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
-          release_name: Release ${{ github.sha }}
+          tag_name: release
+          release_name: Auto-Release ${{ github.sha }}
           body: |
             This is the release for commit ${{ github.sha }}.
           draft: false
