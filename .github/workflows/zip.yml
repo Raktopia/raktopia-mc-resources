@@ -1,34 +1,28 @@
-name: make zip file
-
 on:
   push:
     branches:
       - main
-
 jobs:
-  zip-contents:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Zip Main Branch Contents
-      run: |
-        # Create a temporary directory to store the contents
-        mkdir temp_contents
-        shopt -s dotglob # Include hidden files and folders
-        cp -r * temp_contents  # Copy all contents to the temporary directory
-        shopt -u dotglob # Disable dotglob to avoid hidden files in the next step
-        zip -r main-branch-contents.zip temp_contents/*  # Create the zip file
+      - name: Zip files
+        run: |
+          zip -r my_files.zip .
+          mv my_files.zip ${{ github.workspace }}/my_files.zip
 
-    - name: Upload Zip File
-      uses: actions/upload-artifact@v2
-      with:
-        name: main-branch-contents
-        path: main-branch-contents.zip
-
-    - name: Clean Up
-      run: |
-        rm -r temp_contents
-        rm main-branch-contents.zip
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          body: |
+            This is the release for commit ${{ github.sha }}.
+          draft: false
+          prerelease: false
