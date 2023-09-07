@@ -1,0 +1,18 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "minecraft:block/carved_pumpkin",
+    "side": "minecraft:block/pumpkin_side",
+    "top": "minecraft:block/pumpkin_top"
+  },
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 1 },
+      "model": "custom/lobby_cosmetics/pilot_headset/pilot_headset"
+    },
+    {
+      "predicate": { "custom_model_data": 2 },
+      "model": "custom/lobby_cosmetics/axolotl/axolotl"
+    }
+  ]
+}
