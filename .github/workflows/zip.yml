@@ -17,7 +17,9 @@ jobs:
       run: |
         # Create a temporary directory to store the contents
         mkdir temp_contents
+        shopt -s dotglob # Include hidden files and folders
         cp -r * temp_contents  # Copy all contents to the temporary directory
+        shopt -u dotglob # Disable dotglob to avoid hidden files in the next step
         zip -r main-branch-contents.zip temp_contents/*  # Create the zip file
 
     - name: Upload Zip File
