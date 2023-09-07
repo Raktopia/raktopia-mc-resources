@@ -1,0 +1,32 @@
+name: make zip file
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zip-contents:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Zip Main Branch Contents
+      run: |
+        # Create a temporary directory to store the contents
+        mkdir temp_contents
+        cp -r * temp_contents  # Copy all contents to the temporary directory
+        zip -r main-branch-contents.zip temp_contents/*  # Create the zip file
+
+    - name: Upload Zip File
+      uses: actions/upload-artifact@v2
+      with:
+        name: main-branch-contents
+        path: main-branch-contents.zip
+
+    - name: Clean Up
+      run: |
+        rm -r temp_contents
+        rm main-branch-contents.zip
