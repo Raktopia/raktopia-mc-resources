@@ -14,13 +14,21 @@ jobs:
         run: |
           zip -r resources.zip .
 
+      - name: Get shortened SHA
+        id: shorten_sha
+        uses: bhowell2/github-substring-action@1.0.2
+        with:
+         string: ${{ github.sha }}
+         start: 0
+         length: 7
+
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GABRIEL_TOKEN }}
         with:
-          tag_name: ${{ substr(github.sha, 0, 7) }}
+          tag_name: ${{ steps.shorten_sha.outputs.result }}
           release_name: Auto-Release ${{ github.sha }}
           body: |
             This is the release for commit ${{ github.sha }}.
