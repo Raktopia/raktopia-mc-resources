@@ -20,7 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GABRIEL_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
+          tag_name: ${{ substr(github.sha, 0, 7) }}
           release_name: Auto-Release ${{ github.sha }}
           body: |
             This is the release for commit ${{ github.sha }}.
