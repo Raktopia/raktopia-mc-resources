@@ -2,10 +2,59 @@
   "providers": [
     {
       "type": "bitmap",
+      "file": "customfont/tags/owner.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE001"]
+    },
+    {
+      "type": "bitmap",
       "file": "customfont/tags/admin.png",
       "ascent": 8,
       "height": 9,
-      "chars": ["\uE200"]
+      "chars": ["\uE002"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/developer.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE003"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/mod.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE004"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/sup.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE005"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/builder.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE006"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/team.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE007"]
+    },
+    {
+      "type": "bitmap",
+      "file": "customfont/tags/player.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": ["\uE008"]
     }
   ]
 }
