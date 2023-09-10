@@ -59,25 +59,25 @@
     {
       "type": "bitmap",
       "file": "minecraft:customfont/scoreboard-title.png",
-      "ascent": 14,
-      "height": 14,
+      "ascent": 15,
+      "height": 15,
       "chars": ["\uE009"]
     },
-	{
+    {
       "type": "bitmap",
       "file": "customfont/tags/scorename.png",
       "ascent": 8,
       "height": 9,
       "chars": ["\uE010"]
     },
-	{
+    {
       "type": "bitmap",
       "file": "customfont/tags/scoreonline.png",
       "ascent": 8,
       "height": 9,
       "chars": ["\uE011"]
     },
-	{
+    {
       "type": "bitmap",
       "file": "customfont/tags/scorediscord.png",
       "ascent": 8,
