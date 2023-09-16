@@ -5,6 +5,10 @@
     {
       "predicate": { "custom_model_data": 1 },
       "model": "custom/lobby_titles/main/main"
+    },
+    {
+      "predicate": { "custom_model_data": 2 },
+      "model": "custom/lobby_titles/main/main"
     }
   ]
 }
